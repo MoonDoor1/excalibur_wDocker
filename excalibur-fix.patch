@@ -1,0 +1,20 @@
+--- a/home/python/venv/lib/python3.9/site-packages/excalibur/tasks.py    2021-07-01 12:00:00.000000000 +0000
++++ b/home/python/venv/lib/python3.9/site-packages/excalibur/tasks.py    2021-07-01 12:00:00.000000000 +0000
+@@ -10,7 +10,7 @@
+ import os
+ import glob
+ import json
+ import logging
+-import subprocess
++import subprocess
+ import datetime as dt
+ 
+ import camelot
+@@ -20,7 +20,7 @@
+ from camelot.core import TableList
+ from camelot.parsers import Lattice, Stream
+-from camelot.ext.ghostscript import Ghostscript
++from ghostscript import Ghostscript
+ 
+ from . import configuration as conf
+ 
