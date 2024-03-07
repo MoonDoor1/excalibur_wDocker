@@ -10,7 +10,7 @@ The `camelot.ext` module doesn't exist for downloading Ghostscript.
 
 ## Building and Running the Docker Image
 
-After applying the above fixes, initialize the Docker image with the following command:
+Initialize the Docker image with the following command:
 
 ```bash
 docker build -t custom-excalibur .
