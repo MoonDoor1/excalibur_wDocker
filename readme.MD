@@ -7,6 +7,25 @@ This repository builds upon the base installation provided by [williamjacksn/doc
 The `camelot.ext` module doesn't exist for downloading Ghostscript.
 `PyPDF2` isn't downloaded by default. We've remedied these issues with our Dockerfile.
 
+
+## Building and Running the Docker Image
+
+After applying the above fixes, initialize the Docker image with the following command:
+
+```bash
+docker build -t custom-excalibur .
+```
+
+
+Then, run the Docker image on port 8080 with this command:
+
+```bash
+docker run -v ~/excalibur-data:/home/python/excalibur -p 8080:8080 custom-excalibur
+```
+
+
+Now, Excalibur should be up and running, accessible via <http://localhost:8080>.
+
 ## Fixes Applied
 
 ### Correcting the Ghostscript Import
@@ -34,21 +53,4 @@ Optionally, to verify that the change was made, include this line in your Docker
 RUN grep \"from ghostscript import Ghostscript\" /home/python/venv/lib/python3.9/site-packages/excalibur/tasks.py
 ```
 
-## Building and Running the Docker Image
 
-After applying the above fixes, initialize the Docker image with the following command:
-
-```bash
-docker build -t custom-excalibur .
-```
-
-
-Then, run the Docker image on port 8080 with this command:
-
-```bash
-docker run -v ~/excalibur-data:/home/python/excalibur -p 8080:8080 custom-excalibur
-```
-
-
-Now, Excalibur should be up and running, accessible via <http://localhost:8080>.
-# excalibur_wDocker
